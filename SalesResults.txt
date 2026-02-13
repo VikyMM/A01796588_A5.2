@@ -1,0 +1,25 @@
+==================================================
+         SALES RESULTS REPORT
+==================================================
+
+  SALE    1:  $    4,969.25
+  SALE    2:  $    6,352.61
+  SALE    3:  $    7,163.70
+  SALE    4:  $   11,838.37
+  SALE    5:  $    6,829.96
+  SALE    6:  $    4,763.14
+  SALE    7:  $      923.48
+  SALE    8:  $   19,848.61
+  SALE    9:  $   10,390.29
+  SALE   10:  $   92,155.96
+
+--------------------------------------------------
+  GRAND TOTAL:  $  165,235.37
+--------------------------------------------------
+
+WARNINGS/ERRORS DURING PROCESSING:
+  - Error: Product 'Elotes' in SALE 6 not found in catalogue. Record skipped.
+  - Error: Product 'Frijoles' in SALE 9 not found in catalogue. Record skipped.
+
+Time elapsed: 0.0005 seconds
+==================================================
