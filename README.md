@@ -1,5 +1,8 @@
 # Actividad 5.2 – Ejercicio de programación 2 (Compute Sales)
-# María Virginia Mendizábal Miranda - A01796588
+
+**María Virginia Mendizábal Miranda**  
+Matrícula: A01796588
+
 
 ## Introducción
 
@@ -41,7 +44,18 @@ Funciones principales:
 - `format_results()`: Genera un reporte formateado y legible para el usuario.
 - `main()`: Coordina el flujo general del programa, controla los argumentos de entrada y mide el tiempo de ejecución.
 
-Esta estructura modular reduce el acoplamiento, mejora la legibilidad y facilita futuras extensiones o mantenimiento del sistema.
+Esta estructura modular reduce el acoplamiento entre componentes, mejora la legibilidad del código y facilita futuras extensiones o mantenimiento del sistema. La separación en funciones independientes permite la reutilización del código, habilita la implementación futura de pruebas unitarias sobre cada componente y contribuye a disminuir la complejidad ciclomática de cada bloque funcional, incrementando así la mantenibilidad y escalabilidad del programa.
+
+
+### Flujo general del programa
+
+1. Se validan los argumentos de entrada.
+2. Se cargan los archivos JSON.
+3. Se construye el catálogo de precios.
+4. Se procesan las ventas.
+5. Se generan los resultados formateados.
+6. Se guardan los resultados en archivo.
+
 
 ## Manejo de errores y robustez
 
@@ -243,6 +257,7 @@ El uso disciplinado de herramientas de análisis estático, junto con una estruc
 
 La calidad no es una etapa posterior al desarrollo, sino una práctica constante que impacta directamente en la robustez, claridad y sostenibilidad del software.
 
+El uso disciplinado de commits siguiendo el estándar Conventional Commits permitió mantener trazabilidad clara del proceso de desarrollo y facilitar futuras auditorías o revisiones.
 
 ---
 
