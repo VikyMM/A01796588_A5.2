@@ -1,6 +1,17 @@
 # Actividad 5.2 – Ejercicio de programación 2 (Compute Sales)
 # María Virginia Mendizábal Miranda - A01796588
 
+## Introducción
+
+En el desarrollo de software moderno, la calidad no se limita únicamente al correcto funcionamiento del programa, sino que también abarca aspectos como mantenibilidad, legibilidad, robustez y cumplimiento de estándares. La presente actividad integra tanto pruebas dinámicas como pruebas estáticas para fortalecer las prácticas de aseguramiento de la calidad.
+
+En esta práctica se implementó el programa `computeSales.py`, cuyo propósito es procesar información contenida en archivos JSON para calcular el costo total de ventas, aplicando validaciones y manejo de errores que garanticen la continuidad de ejecución ante datos inválidos.
+
+Además del desarrollo funcional, se incorporó el uso de herramientas de análisis estático como **flake8** y **pylint**, permitiendo evaluar el cumplimiento del estándar PEP 8, la calidad estructural del código, la correcta documentación y la complejidad del programa. Esto demuestra la relación directa entre las prácticas de programación disciplinadas y la mejora continua en la calidad del software.
+
+La actividad refuerza la importancia de integrar el control de versiones mediante Git, así como la correcta documentación y trazabilidad del proceso de desarrollo, elementos esenciales en entornos profesionales.
+
+
 ## Descripción
 Este proyecto implementa el programa `computeSales.py`, el cual calcula el costo total de ventas a partir de dos archivos JSON:
 1) Un catálogo de precios (ProductList / priceCatalogue).
@@ -17,6 +28,33 @@ El programa:
 - `SalesResults.txt` – Archivo de salida generado.
 - `TC1/`, `TC2/`, `TC3/` – Casos de prueba (archivos JSON).
 - `evidence/` – Evidencias (capturas de ejecución, flake8 y pylint).
+
+## Arquitectura del programa
+
+El programa fue diseñado siguiendo un enfoque modular, separando responsabilidades en funciones independientes para mejorar la claridad, mantenibilidad y testabilidad del código.
+
+Funciones principales:
+
+- `load_json_file()`: Carga y valida archivos JSON, manejando excepciones en caso de archivo inexistente o formato inválido.
+- `build_price_catalogue()`: Construye un diccionario de productos y precios a partir del catálogo.
+- `compute_sales()`: Procesa los registros de ventas, calcula los totales por venta y el gran total, e identifica errores en los datos.
+- `format_results()`: Genera un reporte formateado y legible para el usuario.
+- `main()`: Coordina el flujo general del programa, controla los argumentos de entrada y mide el tiempo de ejecución.
+
+Esta estructura modular reduce el acoplamiento, mejora la legibilidad y facilita futuras extensiones o mantenimiento del sistema.
+
+## Manejo de errores y robustez
+
+El programa implementa validaciones explícitas para:
+
+- Productos inexistentes en catálogo.
+- Registros incompletos.
+- Cantidades inválidas.
+- Archivos inexistentes o con formato incorrecto.
+
+Los errores se reportan sin detener la ejecución,
+garantizando continuidad operativa.
+
 
 ## Requisitos
 - Python 3.x
@@ -122,6 +160,33 @@ Estos errores se reportaron tanto en la salida estandar al inicio de la ejecucio
 
 ---
 
+## Relación con los objetivos de aprendizaje
+
+- 2.7 Diferencia entre pruebas dinámicas y estáticas:
+  Las pruebas dinámicas se realizaron mediante la ejecución de los casos TC1, TC2 y TC3. 
+  Las pruebas estáticas se realizaron utilizando flake8 y pylint, sin ejecutar el programa.
+
+- 2.8 Beneficios del análisis estático:
+  Permite detectar problemas de estilo, complejidad y estructura antes de la ejecución,
+  mejorando mantenibilidad y legibilidad.
+
+- 2.9 Origen de inspecciones:
+  El análisis estático automatizado complementa las inspecciones manuales tradicionales,
+  reduciendo defectos tempranamente.
+
+- 2.10 Diferencias entre revisiones:
+  En esta práctica se utilizó inspección automática (flake8, pylint),
+  que automatiza validaciones estructurales.
+
+- 2.11 Relación herramientas–código:
+  flake8 y pylint analizan directamente el código fuente,
+  evaluando estilo, estructura y buenas prácticas.
+
+- 2.12 Experimentación:
+  Se ejecutaron ambas herramientas y se realizaron correcciones hasta obtener 0 errores
+  y calificación perfecta.
+
+
 ## Conclusiones
 
 ### Objetivo de la actividad
@@ -158,6 +223,26 @@ El programa cumple con los siguientes criterios de calidad:
 - **Trazabilidad:** Los errores se reportan tanto en la salida estandar como en el reporte final, permitiendo identificar los registros problematicos.
 - **Rendimiento:** Los tiempos de ejecucion fueron menores a 1 milisegundo en todos los casos, lo que refleja una implementacion eficiente.
 - **Persistencia:** Los resultados se guardan automaticamente en `SalesResults.txt` para su consulta posterior.
+
+### Complejidad y rendimiento
+
+Desde el punto de vista algorítmico, el programa presenta una complejidad temporal O(n), donde n representa el número de registros de ventas procesados. Cada venta se analiza una sola vez y las búsquedas en el catálogo se realizan mediante un diccionario (hash map), lo que permite acceso en tiempo constante O(1).
+
+Esto garantiza eficiencia incluso cuando el volumen de datos aumenta significativamente.
+
+En los tres casos de prueba (TC1, TC2 y TC3), los tiempos de ejecución fueron inferiores a un milisegundo, lo que demuestra un procesamiento rápido y adecuado para aplicaciones de mayor escala.
+
+La estructura modular y el uso eficiente de estructuras de datos contribuyen tanto al buen rendimiento como a la mantenibilidad del sistema.
+
+
+### Reflexión final
+
+Más allá del cumplimiento funcional, esta actividad demuestra que la calidad del software debe integrarse desde el diseño hasta la entrega final. La combinación de pruebas dinámicas (ejecución de casos de prueba) y pruebas estáticas (flake8 y pylint) permite detectar defectos tempranamente y mejorar la mantenibilidad del código.
+
+El uso disciplinado de herramientas de análisis estático, junto con una estructura modular y un manejo robusto de errores, fortalece la confiabilidad del sistema. Asimismo, la documentación y el control de versiones mediante Git contribuyen a la trazabilidad y mejora continua del proceso de desarrollo.
+
+La calidad no es una etapa posterior al desarrollo, sino una práctica constante que impacta directamente en la robustez, claridad y sostenibilidad del software.
+
 
 ---
 
